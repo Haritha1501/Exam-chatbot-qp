@@ -36,3 +36,6 @@ def create_app():
         return app.send_static_file(path)
 
     return app
+
+# Expose app instance so both 'gunicorn app:app' and 'gunicorn run:app' work seamlessly
+app = create_app()
